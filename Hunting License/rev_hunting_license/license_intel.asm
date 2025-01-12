@@ -137,18 +137,18 @@ Disassembly of section .text:
   401193:	e8 a8 fe ff ff       	call   401040 <puts@plt>
   401198:	e8 d3 fe ff ff       	call   401070 <getchar@plt>
   40119d:	88 45 ff             	mov    BYTE PTR [rbp-0x1],al
-  4011a0:	80 7d ff 79          	cmp    BYTE PTR [rbp-0x1],0x79
+  4011a0:	80 7d ff 79          	cmp    BYTE PTR [rbp-0x1],0x79  ; y
   4011a4:	74 20                	je     4011c6 <main+0x54>
-  4011a6:	80 7d ff 59          	cmp    BYTE PTR [rbp-0x1],0x59
+  4011a6:	80 7d ff 59          	cmp    BYTE PTR [rbp-0x1],0x59  ; Y
   4011aa:	74 1a                	je     4011c6 <main+0x54>
-  4011ac:	80 7d ff 0a          	cmp    BYTE PTR [rbp-0x1],0xa
+  4011ac:	80 7d ff 0a          	cmp    BYTE PTR [rbp-0x1],0xa   ; Enter
   4011b0:	74 14                	je     4011c6 <main+0x54>
   4011b2:	bf dd 20 40 00       	mov    edi,0x4020dd
   4011b7:	e8 84 fe ff ff       	call   401040 <puts@plt>
   4011bc:	bf ff ff ff ff       	mov    edi,0xffffffff
-  4011c1:	e8 ba fe ff ff       	call   401080 <exit@plt>
+  4011c1:	e8 ba fe ff ff       	call   401080 <exit@plt>        ; stop if not
   4011c6:	b8 00 00 00 00       	mov    eax,0x0
-  4011cb:	e8 ba 00 00 00       	call   40128a <exam>
+  4011cb:	e8 ba 00 00 00       	call   40128a <exam>            ; go to exam
   4011d0:	bf f0 20 40 00       	mov    edi,0x4020f0
   4011d5:	e8 66 fe ff ff       	call   401040 <puts@plt>
   4011da:	b8 00 00 00 00       	mov    eax,0x0
@@ -156,11 +156,17 @@ Disassembly of section .text:
   4011e0:	c3                   	ret    
 
 00000000004011e1 <reverse>:
+; void reverse(char *output, const char *input, size_t length) {
+;     for (size_t i = 0; i < length; i++) {
+;         output[i] = input[length - 1 - i];
+;     }
+; }
   4011e1:	55                   	push   rbp
   4011e2:	48 89 e5             	mov    rbp,rsp
-  4011e5:	48 89 7d e8          	mov    QWORD PTR [rbp-0x18],rdi
-  4011e9:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi
-  4011ed:	48 89 55 d8          	mov    QWORD PTR [rbp-0x28],rdx
+  4011e5:	48 89 7d e8          	mov    QWORD PTR [rbp-0x18],rdi ; ptr to 0 ausgabe buffer
+  4011e9:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi ; to 0x404060? 4060 is 10
+                                                     ; 0x20  base source location
+  4011ed:	48 89 55 d8          	mov    QWORD PTR [rbp-0x28],rdx ; 0b
   4011f1:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
   4011f8:	eb 2e                	jmp    401228 <reverse+0x47>
   4011fa:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
@@ -187,10 +193,16 @@ Disassembly of section .text:
   401236:	c3                   	ret    
 
 0000000000401237 <xor>:
+; xor mit ecx
+; void xor(char *output, const char *input, size_t length, char key) {
+;     for (size_t i = 0; i < length; i++) {
+;         output[i] = input[i] ^ key;
+;     }
+; }
   401237:	55                   	push   rbp
   401238:	48 89 e5             	mov    rbp,rsp
   40123b:	48 89 7d e8          	mov    QWORD PTR [rbp-0x18],rdi
-  40123f:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi
+  40123f:	48 89 75 e0          	mov    QWORD PTR [rbp-0x20],rsi    
   401243:	48 89 55 d8          	mov    QWORD PTR [rbp-0x28],rdx
   401247:	89 c8                	mov    eax,ecx
   401249:	88 45 d4             	mov    BYTE PTR [rbp-0x2c],al
@@ -221,15 +233,15 @@ Disassembly of section .text:
   40128a:	55                   	push   rbp
   40128b:	48 89 e5             	mov    rbp,rsp
   40128e:	48 83 ec 30          	sub    rsp,0x30
-  401292:	bf 20 21 40 00       	mov    edi,0x402120
-  401297:	e8 b4 fd ff ff       	call   401050 <readline@plt>
+  401292:	bf 20 21 40 00       	mov    edi,0x402120                  ; text "OK a warmup"
+  401297:	e8 b4 fd ff ff       	call   401050 <readline@plt>        ; read input line
   40129c:	48 89 45 f8          	mov    QWORD PTR [rbp-0x8],rax
   4012a0:	48 8b 45 f8          	mov    rax,QWORD PTR [rbp-0x8]
-  4012a4:	be 70 21 40 00       	mov    esi,0x402170
+  4012a4:	be 70 21 40 00       	mov    esi,0x402170                  ; password 1 0x402170 = 2170 in code yes
   4012a9:	48 89 c7             	mov    rdi,rax
-  4012ac:	e8 af fd ff ff       	call   401060 <strcmp@plt>
+  4012ac:	e8 af fd ff ff       	call   401060 <strcmp@plt>           ; compare it
   4012b1:	85 c0                	test   eax,eax
-  4012b3:	74 14                	je     4012c9 <exam+0x3f>
+  4012b3:	74 14                	je     4012c9 <exam+0x3f>            ; continue to 2nd
   4012b5:	bf 82 21 40 00       	mov    edi,0x402182
   4012ba:	e8 81 fd ff ff       	call   401040 <puts@plt>
   4012bf:	bf ff ff ff ff       	mov    edi,0xffffffff
@@ -241,8 +253,9 @@ Disassembly of section .text:
   4012dc:	00 
   4012dd:	c7 45 f4 00 00 00 00 	mov    DWORD PTR [rbp-0xc],0x0
   4012e4:	48 8d 45 ec          	lea    rax,[rbp-0x14]
-  4012e8:	ba 0b 00 00 00       	mov    edx,0xb
-  4012ed:	be 60 40 40 00       	mov    esi,0x404060
+  4012e8:	ba 0b 00 00 00       	mov    edx,0xb  ; Überträgt den Wert 11 (0xb) in edx (vermutlich die Länge der Zeichenkette).
+  4012ed:	be 60 40 40 00       	mov    esi,0x404060 ; Lädt die Adresse eines Strings oder einer Ressource in esi. 
+                                       ; DORT IST NICHTS
   4012f2:	48 89 c7             	mov    rdi,rax
   4012f5:	e8 e7 fe ff ff       	call   4011e1 <reverse>
   4012fa:	bf 98 21 40 00       	mov    edi,0x402198
@@ -262,15 +275,15 @@ Disassembly of section .text:
   401333:	48 8b 45 f8          	mov    rax,QWORD PTR [rbp-0x8]
   401337:	48 89 c7             	mov    rdi,rax
   40133a:	e8 f1 fc ff ff       	call   401030 <free@plt>
-  40133f:	48 c7 45 d0 00 00 00 	mov    QWORD PTR [rbp-0x30],0x0
+  40133f:	48 c7 45 d0 00 00 00 	mov    QWORD PTR [rbp-0x30],0x0 ; continue 3
   401346:	00 
   401347:	48 c7 45 d8 00 00 00 	mov    QWORD PTR [rbp-0x28],0x0
   40134e:	00 
   40134f:	c6 45 e0 00          	mov    BYTE PTR [rbp-0x20],0x0
   401353:	48 8d 45 d0          	lea    rax,[rbp-0x30]
-  401357:	b9 13 00 00 00       	mov    ecx,0x13
-  40135c:	ba 11 00 00 00       	mov    edx,0x11
-  401361:	be 70 40 40 00       	mov    esi,0x404070
+  401357:	b9 13 00 00 00       	mov    ecx,0x13       ; xor with 13
+  40135c:	ba 11 00 00 00       	mov    edx,0x11       ; 17 characters?
+  401361:	be 70 40 40 00       	mov    esi,0x404070   ; 4070 is source, also 16 nach dem rotiertem?
   401366:	48 89 c7             	mov    rdi,rax
   401369:	e8 c9 fe ff ff       	call   401237 <xor>
   40136e:	bf e8 21 40 00       	mov    edi,0x4021e8

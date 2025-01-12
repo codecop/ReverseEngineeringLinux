@@ -109,4 +109,5 @@ __TMC_END__
 ### Running it
 
 1. PasswordNumeroUno
-
+2. P4ssw0rdTw0 (reversed with function)
+3. (xored with 0x13)
