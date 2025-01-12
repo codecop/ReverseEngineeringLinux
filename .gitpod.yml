@@ -1,0 +1,9 @@
+vscode:
+  extensions:
+    - streetsidesoftware.code-spell-checker
+    - DavidAnson.vscode-markdownlint
+    - Gruntfuggly.todo-tree
+    - ms-vscode.hexeditor
+    - tintinweb.vscode-decompiler
+
+workspaceLocation: '/workspace/ReverseEngineeringLinux'
