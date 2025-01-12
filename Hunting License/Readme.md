@@ -126,3 +126,9 @@ Okay, first, a warmup - what's the first password? This one's not even hidden: P
 Getting harder - what's the second password? P4ssw0rdTw0
 Your final test - give me the third, and most protected, password: ThirdAndFinal!!!
 Well done hunter - consider yourself certified!
+
+### Flag
+
+Read the writeup ;-) Could have answered it all.
+
+HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}
