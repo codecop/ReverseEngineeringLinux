@@ -283,7 +283,7 @@ Disassembly of section .text:
   401353:	48 8d 45 d0          	lea    rax,[rbp-0x30]
   401357:	b9 13 00 00 00       	mov    ecx,0x13       ; xor with 13
   40135c:	ba 11 00 00 00       	mov    edx,0x11       ; 17 characters?
-  401361:	be 70 40 40 00       	mov    esi,0x404070   ; 4070 is source, also 16 nach dem rotiertem?
+  401361:	be 70 40 40 00       	mov    esi,0x404070   ; 4070 is source, also 16 nach dem rotiertem? Ja, ist 3060 im file. OK
   401366:	48 89 c7             	mov    rdi,rax
   401369:	e8 c9 fe ff ff       	call   401237 <xor>
   40136e:	bf e8 21 40 00       	mov    edi,0x4021e8
