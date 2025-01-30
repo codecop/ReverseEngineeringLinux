@@ -132,3 +132,11 @@ Well done hunter - consider yourself certified!
 Read the writeup ;-) Could have answered it all.
 
 HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}
+
+### Nachtrag ltrace
+
+3x `sudo ltrace ./license` laufen lassen und die `strcmp("x", "pw")` pruefen.
+
+1. PasswordNumeroUno
+2. P4ssw0rdTw0
+3. ThirdAndFinal!!!
