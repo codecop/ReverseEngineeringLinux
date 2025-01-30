@@ -24,3 +24,15 @@ puts("You're not a real ghost; clear o"...You're not a real ghost; clear off!) =
 ### Flag
 
 HTB{un0bfu5c4t3d_5tr1ng5}
+
+### strace
+
+Trace system calls.
+
+`$ sudo strace ./pass` zeigt 
+
+* read/write
+* random
+* signals
+
+Does not help here.
