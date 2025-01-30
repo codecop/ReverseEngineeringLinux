@@ -1,6 +1,6 @@
 ## Spooky Pass
 
-Same as Hunting License
+Same sceanrio as Hunting License
 
 * file
 * strings -> password
@@ -36,3 +36,12 @@ Trace system calls.
 * signals
 
 Does not help here.
+
+### Ghidra
+
+* Create Playground
+* Import `pass`
+* Decompiled to assembly and then shows C code for the selected method.
+* In C code we see `flag[i] = parts[i*4]`
+* parts is a label -> Symbols/Labels -> 
+* area of memory with `48 00 00 00 54 00 00 00 ... 7D 00 00 00` is the whole flag.
