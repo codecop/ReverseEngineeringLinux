@@ -1,15 +1,18 @@
-## Hunting License
+# 1. Hunting License
 
 [Challenge](https://app.hackthebox.com/challenges/Hunting%2520License)
 
 password: hackthebox
 
-### `file license`
+## `file license`
 
+```[bash]
 license: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5be88c3ed329c1570ab807b55c1875d429a581a7, for GNU/Linux 3.2.0, not stripped
+```
 
-### `strings license`
+## `strings license`
 
+```[bash]
 /lib64/ld-linux-x86-64.so.2
 __gmon_start__
 readline
@@ -28,12 +31,12 @@ First, you're going to need your license, and for that you need to pass the exam
 It's short, but it's not for the faint of heart. Are you up to the challenge?! (y/n)
 Not many are...
 Well done hunter - consider yourself certified!
-Okay, first, a warmup - what's the first password? This one's not even hidden: 
+Okay, first, a warmup - what's the first password? This one's not even hidden:
 PasswordNumeroUno
 Not even close!
-Getting harder - what's the second password? 
+Getting harder - what's the second password?
 You've got it all backwards...
-Your final test - give me the third, and most protected, password: 
+Your final test - give me the third, and most protected, password:
 Failed at the final hurdle!
 ;*3$"
 0wTdr0wss4P
@@ -100,18 +103,19 @@ __TMC_END__
 .data
 .bss
 .comment
+```
 
-### objdump
+## objdump
 
-`objdump -d license > license.asm`
-`objdump -M intel -d license > license_intel.asm`
+`$ objdump -d license > license.asm`
+`$ objdump -M intel -d license > license_intel.asm`
 
-### Running it
+## Running it
 
 1. PasswordNumeroUno
 2. P4ssw0rdTw0 (reversed with function)
 3. (xored with 0x13)
-   47 7b 7a 61 77 52 7d 77 55 7a 7d 72 7f 32 32 32 13
+   `47 7b 7a 61 77 52 7d 77 55 7a 7d 72 7f 32 32 32 13`
    https://xor.pw/
    5468697264416e6446696e616c21212100
    ThirdAndFinal!!!
@@ -131,11 +135,11 @@ Well done hunter - consider yourself certified!
 
 Read the writeup ;-) Could have answered it all.
 
-HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}
+Flag: HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}
 
-### Nachtrag ltrace
+## Nachtrag `ltrace`
 
-3x `sudo ltrace ./license` laufen lassen und die `strcmp("x", "pw")` pruefen.
+3x `$ sudo ltrace ./license` laufen lassen und die `strcmp("x", "pw")` pruefen.
 
 1. PasswordNumeroUno
 2. P4ssw0rdTw0

@@ -1,15 +1,15 @@
-## Spooky Pass
+# 2. Spooky Pass
 
-Same sceanrio as Hunting License
+Same scenario as Hunting License.
 
 * file
 * strings -> password
 
-### ltrace
+## ltrace
 
 Trace library calls.
 
-```
+```[bash]
 $ sudo ltrace ./pass
 puts("Welcome to the \033[1;3mSPOOKIEST\033["......he year.)                   = 54
 printf("Before we let you in, you'll nee"...)                                  = 59
@@ -21,15 +21,13 @@ puts("You're not a real ghost; clear o"...You're not a real ghost; clear off!) =
 +++ exited (status 0) +++
 ```
 
-### Flag
+Flag: HTB{un0bfu5c4t3d_5tr1ng5}
 
-HTB{un0bfu5c4t3d_5tr1ng5}
-
-### strace
+## strace
 
 Trace system calls.
 
-`$ sudo strace ./pass` zeigt 
+`$ sudo strace ./pass` zeigt
 
 * read/write
 * random
@@ -37,11 +35,11 @@ Trace system calls.
 
 Does not help here.
 
-### Ghidra
+## Ghidra
 
 * Create Playground
 * Import `pass`
 * Decompiled to assembly and then shows C code for the selected method.
 * In C code we see `flag[i] = parts[i*4]`
-* parts is a label -> Symbols/Labels -> 
+* `parts` is a label -> Symbols/Labels tree
 * area of memory with `48 00 00 00 54 00 00 00 ... 7D 00 00 00` is the whole flag.
