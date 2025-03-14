@@ -1,7 +1,5 @@
 # 1. Hunting License
 
-[Challenge](https://app.hackthebox.com/challenges/Hunting%2520License)
-
 password: hackthebox
 
 ## `file license`
@@ -107,28 +105,30 @@ __TMC_END__
 
 ## objdump
 
-`$ objdump -d license > license.asm`
-`$ objdump -M intel -d license > license_intel.asm`
+```[bash]
+objdump -d license > license.asm
+objdump -M intel -d license > license_intel.asm
+```
 
 ## Running it
 
 1. PasswordNumeroUno
 2. P4ssw0rdTw0 (reversed with function)
-3. (xored with 0x13)
-   `47 7b 7a 61 77 52 7d 77 55 7a 7d 72 7f 32 32 32 13`
-   https://xor.pw/
-   5468697264416e6446696e616c21212100
+3. (xored with 0x13) \
+   `47 7b 7a 61 77 52 7d 77 55 7a 7d 72 7f 32 32 32 13` \
+   https://xor.pw/ \
+   5468697264416e6446696e616c21212100 \
    ThirdAndFinal!!!
 
 ### `license`
 
-So, you want to be a relic hunter?
-First, you're going to need your license, and for that you need to pass the exam.
-It's short, but it's not for the faint of heart. Are you up to the challenge?! (y/n)
-y
-Okay, first, a warmup - what's the first password? This one's not even hidden: PasswordNumeroUno
-Getting harder - what's the second password? P4ssw0rdTw0
-Your final test - give me the third, and most protected, password: ThirdAndFinal!!!
+So, you want to be a relic hunter? \
+First, you're going to need your license, and for that you need to pass the exam. \
+It's short, but it's not for the faint of heart. Are you up to the challenge?! (y/n) \
+y \
+Okay, first, a warmup - what's the first password? This one's not even hidden: PasswordNumeroUno \
+Getting harder - what's the second password? P4ssw0rdTw0 \
+Your final test - give me the third, and most protected, password: ThirdAndFinal!!! \
 Well done hunter - consider yourself certified!
 
 ### Flag
