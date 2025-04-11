@@ -27,4 +27,7 @@ $ ./encrypt
 * flag.enc ist 17 Characters
 * Wir sehen kein Pattern
 
-## trace
+## ltrace/strace
+
+Es lädt die Datei, verschlüsselt mit random und schreibt dann das enc file.
+
