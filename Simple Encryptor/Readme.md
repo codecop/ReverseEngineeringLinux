@@ -5,7 +5,6 @@ password: hackthebox
 ## file
 
 * `encrypt` ist ein ELF file, normal.
-
 * Das `flag.enc` ist ein binary, 33 bytes lang.
 
 ## strings
@@ -30,7 +29,7 @@ $ ./encrypt
 ```
 
 * neues `flag` war 12 Characters.
-* `flag.enc` ist 17 Characters.
+* `flag.enc` ist 16/17 Characters.
 * Wir sehen kein Pattern.
 * Am ende ist ein `+`.
 
@@ -39,13 +38,13 @@ $ ./encrypt
 Es lädt die Datei, verschlüsselt mit `random` und schreibt dann das `.enc` File.
 Eventuell wird `rand` 2x pro Character aufgerufen.
 
-## objdump
+## objdump - Assembly
 
 * Zeile 246, es wird `time` aufgerufen und damit `srand` initialisiert.
 * Das ist mühsam, besser wäre decompiler.
 * C Funktionen nachschauen im [Cpp Reference](https://en.cppreference.com/w/)
 
-## Ghidra
+## Ghidra - C++
 
 ```[c]
 undefined8 main(void) {
@@ -104,7 +103,7 @@ undefined8 main(void) {
 }
 ```
 
-### Reverse Algorithm
+## Reverse Algorithm
 
 1. read time `seconds` from file, the first four bytes as uint 32 bits
 1. init `srand(seconds)`
@@ -116,7 +115,9 @@ undefined8 main(void) {
 1. xor with random 1
 1. write out buffer
 
-#### Bit examples
+* braucht Linux Environment, oder mindestens 64 bit. Auf Windows ging es nicht.
+
+### Bit examples
 
 ```
 XOR example 11011 ^ 00101 = 11110
@@ -154,9 +155,9 @@ What does the shifting do?
 
 How can we revers it? Just reverse the operations.
 
-#### ad Random
+### ad Random
 
-https://www.geeksforgeeks.org/dsa/pseudo-random-number-generator-prng/
+<https://www.geeksforgeeks.org/dsa/pseudo-random-number-generator-prng/>
 
 ### Flag
 
