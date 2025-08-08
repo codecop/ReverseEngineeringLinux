@@ -158,3 +158,6 @@ How can we revers it? Just reverse the operations.
 
 https://www.geeksforgeeks.org/dsa/pseudo-random-number-generator-prng/
 
+### Flag
+
+HTB{vRy_s1MplE_F1LE3nCryp0r}
