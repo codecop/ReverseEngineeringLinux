@@ -12,7 +12,9 @@ ZIP PASSWORD: hackthebox
 bash: ./Hubbub: cannot execute binary file: Exec format error
 ```
 
-## file
+Idee vielleicht einen Emulator...
+
+### file
 
 ELF 32-bit LSB executable, Atmel AVR 8-bit, version 1 (SYSV), statically linked, with debug_info, not stripped
 
@@ -52,3 +54,20 @@ erstellt ASM file. Das Main schaut immer so aus:
 * delay
 * delay
 * constprop.bla
+
+### Ghidra disassembled
+
+fragt nach Variante
+
+* size 16 oder 24?
+* compiler? - ist GCC
+
+#### 16 bit
+
+probieren mal default-16 bit Address space - Ghidra hat Address out of bounds
+
+* 1 Fehler: kein Dwarf
+
+#### 24 bit
+
+probieren atmega-24 und es kommt kein OutOfBounds error.
