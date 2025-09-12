@@ -95,3 +95,48 @@ Schaut sehr vielversprechend aus. Hat ein UI.
 ```[bash]
 apt-get install simavr
 ```
+
+```[bash]
+$ simavr Hubbub -t
+Loaded 5028 .text at address 0x0
+Loaded 2 .data
+avr_make_mcu_by_name: AVR '' not known
+simavr: AVR '' not known
+```
+
+bedeutet, dass simavr nicht weiß, welchen AVR-Typ (MCU) er simulieren soll ? er bekommt also einen leeren oder unbekannten String. Da musst du den MCU-Namen angeben.
+
+Beispiel für den Arduino Uno (ATmega328P): `./run_avr -m atmega328p -f 16000000 firmware.elf`
+
+* `-m` = MCU-Typ (z. B. atmega328p, atmega32u4, atmega2560 ...)
+* `-f` = Taktfrequenz in Hz
+* `firmware.elf` = das kompilierte Programm (z. B. mit avr-gcc gebaut)
+
+Ok läuft jetzt.
+
+```[bash]
+simavr -m atmega328p -v -f 16000000 -v -t -v Hubbub
+```
+
+Durchs Laufen selber haben wir nichts Neues gesehen.
+
+### Debuggen?
+
+```[bash]
+simavr -m atmega328p -f 16000000 -g Hubbub &
+avr-gdb blink.elf
+(gdb) target remote localhost:1234
+c
+```
+
+Typische GDB-Befehle
+
+* break main -> Breakpoint setzen
+* continue oder c -> Programm starten
+* step oder s -> Schrittweise ausführen (in Funktionen hinein)
+* next oder n -> nächste Zeile (Funktion überspringen)
+* info registers -> Register anzeigen
+* x/16bx 0x100 -> Speicher ab 0x100 anzeigen
+* quit -> beenden
+
+Bisschen über Tooling gelernt. Kein Hinweis.
