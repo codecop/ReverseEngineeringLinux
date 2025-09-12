@@ -29,4 +29,10 @@ Das heißt also schlicht:
 
 Es ist ein C++ Programm fuer Arduino.
 
-## 
+## AVR Toolchain
+
+sudo apt update
+sudo apt install gcc-avr binutils-avr gdb-avr avr-libc avrdude make
+
+### avr-objdump
+
