@@ -36,3 +36,19 @@ sudo apt install gcc-avr binutils-avr gdb-avr avr-libc avrdude make
 
 ### avr-objdump
 
+```
+avr-objdump -x ...
+```
+
+nothing new.
+
+```
+avr-objdump -d ...
+```
+
+erstellt ASM file. Das Main schaut immer so aus:
+
+* delay
+* delay
+* delay
+* constprop.bla
