@@ -116,7 +116,7 @@ objdump -M intel -d license > license_intel.asm
 2. P4ssw0rdTw0 (reversed with function)
 3. (xored with 0x13) \
    `47 7b 7a 61 77 52 7d 77 55 7a 7d 72 7f 32 32 32 13` \
-   https://xor.pw/ \
+   <https://xor.pw/> \
    5468697264416e6446696e616c21212100 \
    ThirdAndFinal!!!
 
@@ -133,7 +133,7 @@ Well done hunter - consider yourself certified!
 
 ### Flag
 
-Read the writeup ;-) Could have answered it all.
+Read the write-up ;-) Could have answered it all.
 
 Flag: HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}
 

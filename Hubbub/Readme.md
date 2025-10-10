@@ -1,4 +1,4 @@
-# Hubbub
+# 5. Hubbub
 
 Scenario: In the cacophony of noise lies the potential for a clear message. (The flag format is `HTB{SOME TEXT HERE}`.)
 
@@ -88,7 +88,7 @@ Code aber gleich. Schwer zu durchschauen. Wirklich Noise!
 
 ### simavr
 
-https://github.com/buserror/simavr
+<https://github.com/buserror/simavr>
 
 Schaut sehr vielversprechend aus. Hat ein UI.
 

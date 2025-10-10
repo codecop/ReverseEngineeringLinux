@@ -58,7 +58,7 @@ Du kannst sogar Control-Flow-Hijacking machen, indem du die Register im `ucontex
 
 ### UD2
 
-OK er sprint 2 bytes hinter den Befehl. Der C Code hat eine Schleife dort, das stimmt aber nicht. Im Ghidra den Assembly dahinter mit `D` disassemblen und wir bekommen den echten Code mit Calls auf Standfunktionen, wie erwartet:
+OK er sprint 2 bytes hinter den Befehl. Der C Code hat eine Schleife dort, das stimmt aber nicht. Im Ghidra den Assembly dahinter mit `D` disassemble und wir bekommen den echten Code mit Calls auf Standfunktionen, wie erwartet:
 
 * prueft auf 2 Argumente (1. ist Filename)
 * prueft auf Laenge 12.

@@ -23,7 +23,7 @@ Es erwartet ein `flag` File, sonst Segmentation Fault.
 ## Execute
 
 ```[bash]
-rm flag.enc 
+rm flag.enc
 mv something.txt flag
 $ ./encrypt
 ```
@@ -78,13 +78,13 @@ undefined8 main(void) {
         randomNumber = rand();                       /* holen sich random1 */
         *(byte*)((long) flag + i) = *(byte*)((long) flag + i) ^ (byte) randomNumber;
                                                      /* flag[i] = flag[i] ^ randomNumber1 */
-        
+
         randomNumber2 = rand();                      /* holen sich random2 */
         randomNumber2 = randomNumber2 & 7;           /* reduziere random auf 3 rechte bit, value 0-7 */
-        *(byte*)((long) flag + i) = 
-            *(byte*)((long) flag + i) << (sbyte) randomNumber2 | 
+        *(byte*)((long) flag + i) =
+            *(byte*)((long) flag + i) << (sbyte) randomNumber2 |
             *(byte*)((long) flag + i) >> 8 - (sbyte) randomNumber2;
-                                                     /* flag[i] = flag[i] << randomNumber2     | 
+                                                     /* flag[i] = flag[i] << randomNumber2     |
                                                                   flag[i] >> (8-randomNumber2)
                                                       */
     }
@@ -111,7 +111,7 @@ undefined8 main(void) {
 1. go by byte for (i = 0; i < (long) flag_length; i = i + 1)
 1. get random 1
 1. get random 2
-1. unshift with random 2, just opposite directions
+1. un-shift with random 2, just opposite directions
 1. xor with random 1
 1. write out buffer
 
