@@ -31,19 +31,19 @@ internal static class _5
 	// is not called from any code, we believed it is `main` in last session
 	public static void main()
 	{
-		_6 obj = new _6(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
-		global::_5._0 = obj._6();
-		_1 = obj._6();
-		_2 = obj._6();
-		_3 = obj._6();
-		_4 = obj._6();
-		_5 = obj._6();
-		_6 = obj._6();
-		_7 = obj._6();
-		_8 = obj._6();
-		_9 = obj._6();
-		a = obj._6();
-		b = obj._6();
-		c = obj._6();
+		CustomBinaryReader reader = new CustomBinaryReader(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
+		global::_5._0 = reader.ReadString();
+		_1 = reader.ReadString();
+		_2 = reader.ReadString();
+		_3 = reader.ReadString();
+		_4 = reader.ReadString();
+		_5 = reader.ReadString();
+		_6 = reader.ReadString();
+		_7 = reader.ReadString();
+		_8 = reader.ReadString();
+		_9 = reader.ReadString();
+		a = reader.ReadString();
+		b = reader.ReadString();
+		c = reader.ReadString();
 	}
 }
