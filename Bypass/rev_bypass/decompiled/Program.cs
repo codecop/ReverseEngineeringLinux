@@ -8,7 +8,7 @@ public class Program
 
 	public static string _2 = ResourceBundle._8;
 
-	public static void main()
+	public static void Main()
 	{
 		if (FakeAskForUserNameAndPassword())
 		{
@@ -16,7 +16,7 @@ public class Program
 			return;
 		}
 		Console.WriteLine(ResourceBundle.userNamePasswordFailedMessage);
-		main();
+		Main();
 	}
 
 	public static bool FakeAskForUserNameAndPassword()

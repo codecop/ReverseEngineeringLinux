@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>HTBChallange</AssemblyName>
+    <AssemblyName>Bypass</AssemblyName>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <OutputType>Exe</OutputType>
     <TargetFramework>net452</TargetFramework>
     <Prefer32Bit>True</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <LangVersion>12.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>

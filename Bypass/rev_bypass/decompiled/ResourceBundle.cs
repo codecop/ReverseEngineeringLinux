@@ -29,7 +29,7 @@ internal static class ResourceBundle
 	internal static string Attribute4Value;
 
 	// is not called from any code, we believed it is initialised somehow
-	public static void initialiser()
+	static ResourceBundle()
 	{
 		CustomBinaryReader reader = new CustomBinaryReader(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("EncryptedResource")));
 		userNamePasswordFailedMessage = reader.ReadString();
