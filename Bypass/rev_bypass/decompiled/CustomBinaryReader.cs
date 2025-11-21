@@ -17,6 +17,11 @@ internal class CustomBinaryReader
 
 	public string ReadString()
 	{
+		/*
+		Length Prefix: The length of the string is stored as a 7-bit encoded integer. 
+		               This can consume between 1 and 5 bytes.
+        String Bytes: The actual string bytes, encoded in UTF-8.
+		 */
 		return reader.ReadString();
 	}
 

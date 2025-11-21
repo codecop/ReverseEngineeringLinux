@@ -1,12 +1,12 @@
 using System;
 
 [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class)]
-public class _3 : Attribute
+public class Attribute4 : Attribute
 {
 	public string _0;
 
-	public _3()
+	public Attribute4()
 	{
-		_0 = _5.b;
+		_0 = _5.Attribute4Value;
 	}
 }
