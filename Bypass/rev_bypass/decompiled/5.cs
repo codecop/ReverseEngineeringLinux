@@ -28,7 +28,8 @@ internal static class _5
 
 	internal static string c;
 
-	public static void _0()
+	// is not called from any code, we believed it is `main` in last session
+	public static void main()
 	{
 		_6 obj = new _6(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
 		global::_5._0 = obj._6();
