@@ -132,4 +132,20 @@ Starter [blog](https://starkeblog.com/reverse-engineering/dotnet/2024/04/18/reve
 * Understand fields in _5 and flow in \_0.
 * Finish translation. (Resourced "0")
 
-TODO weiter code ansehen und umbenennen
+### tbd
+
+Wir wissen was passiert. Was machen wir?
+
+* change source, compile and run -> see output
+  * Host Version: 6.0.27
+  * Architecture: x64
+  * <https://dotnet.microsoft.com/en-us/download/dotnet/6.0>
+  * das geht natürlich, weil "0" lokal ist
+  * vielleicht langweilig?
+
+* hook mit Frida oder anderen VS Code Debuggern
+  * Start mit Windows Frida <https://labs.calypso.pub/windows-instrumentation-with-frida>
+  * Adapt to CLR <https://watson0x90.com/net-hooking-with-frida-and-fermion-c14d4f19c823>
+  * muss auch kompilieren...
+  * TODO work through next
+  * prinzipiell spannend, was muss ich machen?
