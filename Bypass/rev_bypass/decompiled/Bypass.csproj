@@ -14,8 +14,8 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="0" />
-    <EmbeddedResource Include="0" LogicalName="0" />
+    <None Remove="EncryptedResource" />
+    <EmbeddedResource Include="EncryptedResource" LogicalName="EncryptedResource" />
   </ItemGroup>
   <ItemGroup />
 </Project>

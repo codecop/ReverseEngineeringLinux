@@ -1,6 +1,6 @@
 using System.Reflection;
 
-internal static class _5
+internal static class ResourceBundle
 {
 	internal static string userNamePasswordFailedMessage;
 
@@ -28,10 +28,10 @@ internal static class _5
 
 	internal static string Attribute4Value;
 
-	// is not called from any code, we believed it is `main` in last session
-	public static void main()
+	// is not called from any code, we believed it is initialised somehow
+	public static void initialiser()
 	{
-		CustomBinaryReader reader = new CustomBinaryReader(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
+		CustomBinaryReader reader = new CustomBinaryReader(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("EncryptedResource")));
 		userNamePasswordFailedMessage = reader.ReadString();
 		userNamePrompt = reader.ReadString();
 		pwPrompt = reader.ReadString();

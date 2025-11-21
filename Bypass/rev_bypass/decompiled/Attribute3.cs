@@ -7,6 +7,6 @@ public class Attribute3 : Attribute
 
 	public Attribute3()
 	{
-		_0 = _5.Attribute3Value;
+		_0 = ResourceBundle.Attribute3Value;
 	}
 }
