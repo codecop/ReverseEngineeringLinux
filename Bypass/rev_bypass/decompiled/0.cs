@@ -8,37 +8,37 @@ public class _0
 
 	public static string _2 = _5._8;
 
-	public static void _0()
+	public static void main()
 	{
-		if (_1())
+		if (FakeAskForUserNameAndPassword())
 		{
-			_2();
+			ChallengeForFlag();
 			return;
 		}
-		Console.WriteLine(_5._0);
-		_0();
+		Console.WriteLine(_5.userNamePasswordFailedMessage);
+		main();
 	}
 
-	public static bool _1()
+	public static bool FakeAskForUserNameAndPassword()
 	{
-		Console.Write(_5._1);
+		Console.Write(_5.userNamePrompt);
 		string text = Console.ReadLine();
-		Console.Write(_5._2);
+		Console.Write(_5.pwPrompt);
 		string text2 = Console.ReadLine();
 		return false;
 	}
 
-	public static void _2()
+	public static void ChallengeForFlag()
 	{
-		string text = _5._3;
-		Console.Write(_5._4);
+		string text = _5.expectedInput;
+		Console.Write(_5.challengePrompt);
 		string text2 = Console.ReadLine();
 		if (text == text2)
 		{
-			Console.Write(_5._5 + global::_0._2 + _5._6);
+			Console.Write(_5._5 + _5._8 + _5._6);
 			return;
 		}
-		Console.WriteLine(_5._7);
-		_2();
+		Console.WriteLine(_5.challengeFailedMessage);
+		ChallengeForFlag();
 	}
 }

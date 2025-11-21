@@ -2,23 +2,23 @@ using System.Reflection;
 
 internal static class _5
 {
-	internal static string _0;
+	internal static string userNamePasswordFailedMessage;
 
-	internal static string _1;
+	internal static string userNamePrompt;
 
-	internal static string _2;
+	internal static string pwPrompt;
 
-	internal static string _3;
+	internal static string expectedInput;
 
-	internal static string _4;
+	internal static string challengePrompt;
 
-	internal static string _5;
+	internal static string _5; // OUTPUT 1
 
-	internal static string _6;
+	internal static string _6; // OUTPUT 3
 
-	internal static string _7;
+	internal static string challengeFailedMessage;
 
-	internal static string _8;
+	internal static string _8; // OUTPUT 2
 
 	internal static string Attribute1Value;
 
@@ -32,14 +32,14 @@ internal static class _5
 	public static void main()
 	{
 		CustomBinaryReader reader = new CustomBinaryReader(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
-		_0 = reader.ReadString();
-		_1 = reader.ReadString();
-		_2 = reader.ReadString();
-		_3 = reader.ReadString();
-		_4 = reader.ReadString();
+		userNamePasswordFailedMessage = reader.ReadString();
+		userNamePrompt = reader.ReadString();
+		pwPrompt = reader.ReadString();
+		expectedInput = reader.ReadString();
+		challengePrompt = reader.ReadString();
 		_5 = reader.ReadString();
 		_6 = reader.ReadString();
-		_7 = reader.ReadString();
+		challengeFailedMessage = reader.ReadString();
 		_8 = reader.ReadString();
 		Attribute1Value = reader.ReadString();
 		Attribute2Value = reader.ReadString();
