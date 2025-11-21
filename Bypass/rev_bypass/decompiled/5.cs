@@ -30,7 +30,7 @@ internal static class _5
 
 	public static void _0()
 	{
-		_6 obj = new _6(global::_7._3(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
+		_6 obj = new _6(global::Decryptor.Decrypt(Assembly.GetExecutingAssembly().GetManifestResourceStream("0")));
 		global::_5._0 = obj._6();
 		_1 = obj._6();
 		_2 = obj._6();
