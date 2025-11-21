@@ -122,4 +122,14 @@ Starter [blog](https://starkeblog.com/reverse-engineering/dotnet/2024/04/18/reve
   }
   ```
 
+### VS Code, rename during Reading
+
+* Copy project to rename fields and methods.
+* Understand class _7, read by renaming.
+* we believed it is `main` in last session.
+* Understand the CustomReader. (_6)
+* Some decrypted values are unused attributes. (_1 - \_4)
+* Understand fields in _5 and flow in \_0.
+* Finish translation. (Resourced "0")
+
 TODO weiter code ansehen und umbenennen
