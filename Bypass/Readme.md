@@ -87,7 +87,7 @@ Starter [blog](https://starkeblog.com/reverse-engineering/dotnet/2024/04/18/reve
 
   ```[cs]
   using System.IO;
-  
+
   public static byte[] 3(Stream 0)
   {
     byte[] array = new byte[0.Length];
@@ -101,7 +101,7 @@ Starter [blog](https://starkeblog.com/reverse-engineering/dotnet/2024/04/18/reve
   ```[cs]
   using System.IO;
   using System.Security.Cryptography;
-  
+
   public static byte[] 2(byte[] 0)
   {
     using RijndaelManaged rijndaelManaged = new RijndaelManaged();
@@ -132,20 +132,48 @@ Starter [blog](https://starkeblog.com/reverse-engineering/dotnet/2024/04/18/reve
 * Understand fields in _5 and flow in \_0.
 * Finish translation. (Resourced "0")
 
-### tbd
-
 Wir wissen was passiert. Was machen wir?
 
-* change source, compile and run -> see output
-  * Host Version: 6.0.27
-  * Architecture: x64
+### A) VS Compile and run
+
+* change source `Program.cs`, compile and run -> see output
+* Host Version: 6.0.27
+* Architecture: x64
   * <https://dotnet.microsoft.com/en-us/download/dotnet/6.0>
   * das geht natürlich, weil "0" lokal ist
   * vielleicht langweilig?
 
+```
+     string text = Console.ReadLine();
+     Console.Write(ResourceBundle.pwPrompt);
+     string text2 = Console.ReadLine();
+-    return false;
++    return true;
+   }
+```
+
+und
+
+```
+     string text = ResourceBundle.expectedInput;
+     Console.Write(ResourceBundle.challengePrompt);
+     string text2 = Console.ReadLine();
+-    if (text == text2)
++    if (true)
+     {
+       Console.Write(ResourceBundle._5 + ResourceBundle._8 + ResourceBundle._6);
+       return;
+```
+
+### Flag
+
+HTB{SuP3rC00lFL4g}
+
+### B) Hook mit Frida
+
 * hook mit Frida oder anderen VS Code Debuggern
-  * Start mit Windows Frida <https://labs.calypso.pub/windows-instrumentation-with-frida>
-  * Adapt to CLR <https://watson0x90.com/net-hooking-with-frida-and-fermion-c14d4f19c823>
-  * muss auch kompilieren...
-  * TODO work through next
-  * prinzipiell spannend, was muss ich machen?
+* Start mit Windows Frida <https://labs.calypso.pub/windows-instrumentation-with-frida>
+* Adapt to CLR <https://watson0x90.com/net-hooking-with-frida-and-fermion-c14d4f19c823>
+* prinzipiell spannend, was muss ich machen?
+
+TODO work through next
